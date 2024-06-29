@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../Source/Sorting/InsertionSort.hpp"
+#include "../Source/Sorting/Sorting.hpp"
 
 void checkResult(int expected[], int actual[], int count, std::string testName)
 {
@@ -31,4 +31,12 @@ void runInsertionSortTest(int input[], int expectedOutput[], int size, std::stri
     insertionSort(input, size);
     // CHECK the result
     checkResult(expectedOutput, input, size, "InsertionSort-" + description);
+}
+
+void runMergeSortTest(int input[], int expectedOutput[], int size, std::string description)
+{
+    // SORT the input array
+    mergeSort(input, size);
+    // CHECK the result
+    checkResult(expectedOutput, input, size, "MergeSort-" + description);
 }
